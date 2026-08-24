@@ -1,0 +1,185 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║                     HALL MONITOR - QUICK START GUIDE                      ║
+║                     Network Intelligence System v1.0                       ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📦 INSTALLATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Extract the ZIP file to your desired location
+   Example: C:\Tools\HallMonitor\
+
+2. Right-click INSTALL.bat and select "Run as administrator"
+   - This will verify all files and create necessary directories
+   - The installation should complete in a few seconds
+
+3. Once installation is complete, you're ready to use Hall Monitor!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 LAUNCHING HALL MONITOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OPTION 1: GUI Interface (RECOMMENDED) ⭐
+   → Double-click: hall-monitor.bat
+   → Beautiful graphical interface with easy-to-click buttons
+   → Perfect for most users
+
+OPTION 2: Command Line Interface
+   → Double-click: network-monitor.bat
+   → Traditional menu-driven approach
+   → More control over individual operations
+
+IMPORTANT: Always run as Administrator!
+   - Right-click on the .bat file
+   - Select "Run as administrator"
+   - Click "Yes" when prompted
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎨 HALL MONITOR GUI BUTTONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 Network Info
+   Shows your network adapters, IP addresses, DNS settings
+   → Displays link speed, gateway, and packet statistics
+
+🖥️ Connected Devices
+   Scans your network for all active devices
+   → Shows IP, MAC address, hostname, and connection status
+
+📈 Bandwidth Usage
+   Real-time upload/download monitoring
+   → Shows bandwidth per adapter and top processes using network
+
+📉 Live Chart
+   Continuous network traffic visualization
+   → ASCII-based charts showing bandwidth trends
+   → Press CTRL+C to stop monitoring
+
+📋 Traffic History
+   View all logged network activity
+   → Shows historical data from previous monitoring sessions
+
+⚙️ Configuration
+   Display current settings from config.ini
+   → Edit config.ini to customize monitoring parameters
+
+🔄 Refresh All
+   Refresh monitoring data from all network adapters
+   → Updates all statistics to current values
+
+❌ Exit
+   Close Hall Monitor gracefully
+   → Returns to desktop
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚙️ CUSTOMIZATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Edit config.ini in the installation folder to customize:
+
+[Settings]
+RefreshInterval=5              # How often to refresh (seconds)
+LogTraffic=1                   # Enable traffic logging (1=yes, 0=no)
+EnableCharts=1                 # Enable chart display
+MonitorRefreshRate=2000        # Chart update frequency (milliseconds)
+
+[Thresholds]
+HighBandwidthAlert=100         # Alert threshold in MB/s
+MaxDevicesWarning=50           # Max devices before warning
+
+[Logging]
+LogDirectory=logs              # Where to save logs
+LogFile=network-traffic.log    # Log filename
+LogRetention=30                # Keep logs for N days
+
+[Network]
+NetworkInterface=              # Leave empty for auto-detect
+ARPTimeout=5                   # Scan timeout in seconds
+EnableDNSResolution=1          # Resolve device hostnames
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❓ TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROBLEM: "Access Denied" error
+SOLUTION: Right-click and select "Run as administrator"
+
+PROBLEM: GUI won't display / Looks wrong
+SOLUTION: Ensure Windows 7 or higher with .NET Framework 4.5+
+
+PROBLEM: No devices found on network
+SOLUTION: 
+  - Check that network is active
+  - Ensure you're connected to the network (not just WiFi name visible)
+  - Wait a moment - first scan may take 1-2 minutes
+
+PROBLEM: "PowerShell cannot be found"
+SOLUTION: Windows 7+ includes PowerShell 3.0 by default
+  - Check Windows Updates
+  - Download PowerShell from Microsoft if needed
+
+PROBLEM: "ExecutionPolicy" error in PowerShell
+SOLUTION: Scripts handle this automatically, but if you see it:
+  - The batch files bypass this automatically
+  - Use the .bat files instead of running .ps1 directly
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📁 FILE STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HallMonitor/
+├── hall-monitor.bat                 ← START HERE (GUI)
+├── network-monitor.bat              ← Alternative (CLI)
+├── INSTALL.bat                      ← Run first time installation
+├── hall-monitor-gui.ps1             ← GUI application
+├── config.ini                       ← Configuration file
+├── README.md                        ← Full documentation
+├── QUICKSTART.txt                   ← This file
+├── scripts/
+│   ├── get-network-info.ps1
+│   ├── get-connected-devices.ps1
+│   ├── get-bandwidth-usage.ps1
+│   └── display-chart.ps1
+└── logs/
+    └── network-traffic.log          ← Auto-generated
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✨ SYSTEM REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MINIMUM:
+  • Windows 7 or higher
+  • Administrator privileges
+  • PowerShell 3.0 (included with Windows 7+)
+
+RECOMMENDED:
+  • Windows 10 or higher
+  • 4GB RAM or more
+  • .NET Framework 4.5+
+  • Wired network connection for best results
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📞 SUPPORT & DOCUMENTATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For detailed documentation, open: README.md
+
+For issues or questions:
+  → Check the Troubleshooting section above
+  → Review config.ini settings
+  → Visit the GitHub repository for updates
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎉 YOU'RE ALL SET!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Hall Monitor is ready to use. Double-click hall-monitor.bat to get started!
+
+Enjoy monitoring your network! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════
+Hall Monitor v1.0 | USDA Network Intelligence System
+═══════════════════════════════════════════════════════════════════════════════
